@@ -1,0 +1,100 @@
+.modal {
+    display: flex-column;
+    justify-content: center;
+    position: absolute;
+    justify-content: center;
+    background-color: #164e80;
+    border-radius: 17px;
+    box-shadow: 0 0 5px black;
+    padding: 20px 20px 5px 20px;
+    z-index: 1;
+    width: 400px;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.new-event-title {
+    height: 80px;
+    width: 100%;
+    border-radius: 5px;
+    resize: none;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.date-picker-cells {
+
+}
+
+.react-datepicker__input-container {
+    display: flex;
+    height: 100%;
+    /* width: 100%; */
+}
+
+.react-datepicker-wrapper {
+    width: 45%;
+    height: 100%;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-tags-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.modal-tags-bar input {
+    margin: 5px 0;
+    width:100%;
+}
+
+.modal .event-tags {
+flex-wrap: wrap;
+}
+
+.modal .event-tag {
+    cursor: pointer;
+}
+
+.modal-bottom-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px 0;
+}
+
+.modal-colors-bar {
+    display: flex;
+    height: 20px;
+    align-items: center;
+}
+
+.modal-colors-bar > div:hover {
+    box-shadow: 0 0 5px white;
+    cursor: pointer;
+}
+
+.modal-submit-button {
+    background-color: rgb(50, 199, 50);
+}
+
+.modal-cancel-button {
+    /* background-color: red; */
+}
+
+.selected {
+    box-shadow: 0 0 5px white;
+}
+
+.modal-remove-button {
+    background-color: red;
+    
+}

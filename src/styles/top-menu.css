@@ -1,0 +1,58 @@
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+
+.top-menu-import-export button{
+    margin: 0 2px;
+}
+
+.top-menu-colors-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.color-filters {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.color-filters .color-tag-stick:hover,
+.color-filters .selected {
+    height: 15px;
+}
+
+.top-menu .event-tags {
+    border: 2px solid rgb(71, 71, 160);
+    border: 2px solid rgb(71, 71, 160);
+    border-radius: 10px;
+    padding: 2px;
+    display: flex;
+    max-width: 50%;
+    max-height: 70%;
+    flex-wrap: wrap;
+    margin: 2px 20px;
+    overflow: hidden;
+}
+.top-menu .event-tags:hover {
+    position: static;
+    top: 20px;
+    background-color: rgba(185, 213, 255, 0.89);
+    max-height: 700px;
+    z-index: 1;
+    overflow:visible;
+}
+
+.top-menu .event-tags .selected {
+    color: orange;
+}
+
+.top-menu .event-tag {
+    cursor: pointer;
+}

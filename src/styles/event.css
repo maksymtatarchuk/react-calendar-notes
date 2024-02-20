@@ -1,0 +1,54 @@
+.custom-event-wrapper {
+    padding: 5px 2px;
+}
+
+.event-color-tag {
+    display: flex;
+    margin: 0 0 5px 5px;
+}
+
+.color-tag-stick {
+    margin: 0 2px;
+    border-radius: 4px;
+    width: 40px;
+    height: 10px;
+}
+
+.red-color-tag {
+    background: #EE204D;
+}
+
+.green-color-tag {
+    background-color: #4CBB17;
+}
+
+.blue-color-tag {
+    background-color: #7CB9E8;
+}
+
+.event-tags {
+    margin: 0 5px;
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.event-tag {
+    background-color: grey;
+    height: 17px;
+    border-radius: 10px;
+    padding: 1px 10px;
+    margin: 1px;
+}
+
+.event-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px 0 0 5px;
+}
+
+.rbc-event:has(> div>  .public-holiday) {
+    background-color: rgba(255, 0, 0, 0.3);
+}
