@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import eventsData from '../data/events.js';
-import EventModel from '../models/EventModel.js';
+import EventModel from '../models/EventModel';
 
 function generateEventID() {
     return 'UUID-'+ uuidv4();

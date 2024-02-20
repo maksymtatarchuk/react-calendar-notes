@@ -1,7 +1,17 @@
 import utils from '../scripts/utils';
 
+interface EventModel {
+    id: string;
+    title: string;
+    start: Date;
+    end: Date;
+    tags: string[];
+    colors: string[];
+    isDraggable: boolean;
+}
+
 class EventModel {
-    constructor(data) {
+    constructor(data: any) {
         this.id = utils.generateEventID();
         this.title = data.title;
         this.start = new Date(data.start);

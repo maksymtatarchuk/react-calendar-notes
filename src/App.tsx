@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect, SetStateAction } from 'react';
-import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
+import { Calendar, dateFnsLocalizer, View } from 'react-big-calendar';
 import { format } from 'date-fns/format';
 import { parse } from 'date-fns/parse';
 import { startOfWeek } from 'date-fns/startOfWeek';
@@ -9,17 +9,17 @@ import DatePicker from 'react-datepicker';
 import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop';
 import html2canvas from 'html2canvas';
 
-import Event from './components/Event.js';
+import Event from './components/Event';
 
 import utils from './scripts/utils.js';
-import HolidayEventModel from './models/HolidayEventModel.js';
-import EventModel from './models/EventModel.js';
-import ExportEventModel from './models/ExportEventModel.js';
+import HolidayEventModel from './models/HolidayEventModel';
+import EventModel from './models/EventModel';
+import ExportEventModel from './models/ExportEventModel';
 
 const locales = {
   'en-US': enUS
 };
-const NEW_EVENT = { id: 'ID', title: '', start: null, end: null, tags: [] as string[], colors: [] as string[], constant: false };
+const NEW_EVENT = new EventModel({ id: 'ID', title: '', start: new Date(), end: new Date(), tags: [], colors: [], isDraggable: true });
 const COLOR_TAGS = ['red', 'green', 'blue'];
 const countryCode = Intl.DateTimeFormat().resolvedOptions().locale;
 
@@ -35,8 +35,7 @@ const localizer = dateFnsLocalizer({
 
 function App() {
   const DndCalendar = withDragAndDrop(Calendar);
-
-  const [view, setView] = useState('month');
+  const [view, setView] = useState('month' as View);
   const [modalHide, setModalHid] = useState(true);
   const [editButton, setEditButton] = useState(false)
   const [allEvents, setAllEvents] = useState(utils.getEvents());
@@ -239,10 +238,10 @@ function App() {
           onChange={(event) => setNewEvent({ ...newEvent, title: event.target.value })}
         />
         <div className='modal-tags-bar'>
-          <div className="event-tags">
+          <div className='event-tags'>
             {newEvent.tags.map((tag: string) => {
               return <div
-                className="event-tag"
+                className='event-tag'
                 key={tag}
                 id={tag}
                 onClick={(event: any) => {
@@ -335,7 +334,7 @@ function App() {
         }}
         onEventDrop={moveEvent}
         onEventResize={resizeEvent}
-        draggableAccessor="isDraggable"
+        draggableAccessor='isDraggable'
         resizable
         selectable
         components={{ event: Event }}
