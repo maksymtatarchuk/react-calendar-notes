@@ -25,7 +25,9 @@
 }
 
 .date-picker-cells {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .react-datepicker__input-container {
@@ -96,5 +98,4 @@ flex-wrap: wrap;
 
 .modal-remove-button {
     background-color: red;
-    
 }

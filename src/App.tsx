@@ -1,5 +1,5 @@
-import { useCallback, useState, useEffect, SetStateAction, ComponentType } from 'react';
-import { Calendar, dateFnsLocalizer, EventProps, View } from 'react-big-calendar';
+import { useCallback, useState, useEffect, SetStateAction } from 'react';
+import { Calendar, dateFnsLocalizer, View } from 'react-big-calendar';
 import { format } from 'date-fns/format';
 import { parse } from 'date-fns/parse';
 import { startOfWeek } from 'date-fns/startOfWeek';
