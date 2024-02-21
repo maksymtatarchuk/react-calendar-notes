@@ -1,5 +1,5 @@
-import { useCallback, useState, useEffect, SetStateAction } from 'react';
-import { Calendar, dateFnsLocalizer, View } from 'react-big-calendar';
+import { useCallback, useState, useEffect, SetStateAction, ComponentType } from 'react';
+import { Calendar, dateFnsLocalizer, EventProps, View } from 'react-big-calendar';
 import { format } from 'date-fns/format';
 import { parse } from 'date-fns/parse';
 import { startOfWeek } from 'date-fns/startOfWeek';
@@ -95,7 +95,7 @@ function App() {
 
 
   const moveEvent = useCallback(
-    (data: { event: { start: Date, end: Date }, start: Date, end: Date }) => {
+    (data: any) => {
       data.event.start = data.start;
       data.event.end = data.end;
     },
@@ -103,7 +103,7 @@ function App() {
   );
 
   const resizeEvent = useCallback(
-    (data: { event: { start: Date, end: Date }, start: Date, end: Date }) => {
+    (data: any) => {
       data.event.start = data.start;
       data.event.end = data.end;
     },
@@ -307,8 +307,6 @@ function App() {
       <DndCalendar
         localizer={localizer}
         events={displayedEvents.concat(holidays)}
-        startAccessor='start'
-        endAccessor='end'
         style={{ height: '90vh', width: '98vw' }}
         defaultView={'month'}
         toolbar={true}
@@ -334,10 +332,10 @@ function App() {
         }}
         onEventDrop={moveEvent}
         onEventResize={resizeEvent}
-        draggableAccessor='isDraggable'
+        draggableAccessor={() => true}
         resizable
         selectable
-        components={{ event: Event }}
+        components={{ event: Event as ComponentType<EventProps<object>> }}
         showAllEvents={true}
       />
     </div >
