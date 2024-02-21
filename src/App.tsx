@@ -308,6 +308,8 @@ function App() {
         localizer={localizer}
         events={displayedEvents.concat(holidays)}
         style={{ height: '90vh', width: '98vw' }}
+        startAccessor={(event: any) => event.start}
+        endAccessor={(event: any) => event.end}
         defaultView={'month'}
         toolbar={true}
         view={view}
@@ -332,7 +334,7 @@ function App() {
         }}
         onEventDrop={moveEvent}
         onEventResize={resizeEvent}
-        draggableAccessor={() => true}
+        draggableAccessor={(event: any) => event.isDraggable}
         resizable
         selectable
         components={{ event: Event as ComponentType<EventProps<object>> }}
