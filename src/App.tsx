@@ -36,6 +36,7 @@ const localizer = dateFnsLocalizer({
 function App() {
   const DndCalendar = withDragAndDrop(Calendar);
   const [view, setView] = useState('month' as View);
+  const [selectedDate, setSelectedDate] = useState(new Date(Date.now()))
   const [modalHide, setModalHid] = useState(true);
   const [editButton, setEditButton] = useState(false)
   const [allEvents, setAllEvents] = useState(utils.getEvents());
@@ -308,8 +309,8 @@ function App() {
         localizer={localizer}
         events={displayedEvents.concat(holidays)}
         style={{ height: '90vh', width: '98vw' }}
-        startAccessor={(event: any) => event.start}
-        endAccessor={(event: any) => event.end}
+        // startAccessor={(event: any) => event.start}
+        // endAccessor={(event: any) => event.end}
         defaultView={'month'}
         toolbar={true}
         view={view}
@@ -339,6 +340,8 @@ function App() {
         selectable
         components={{ event: Event as ComponentType<EventProps<object>> }}
         showAllEvents={true}
+        date={selectedDate}
+        onNavigate={date => setSelectedDate(date)}
       />
     </div >
   )
