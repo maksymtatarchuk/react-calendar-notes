@@ -338,7 +338,7 @@ function App() {
         draggableAccessor={(event: any) => event.isDraggable}
         resizable
         selectable
-        components={{ event: Event as ComponentType<EventProps<object>> }}
+        components={{ event: Event }}
         showAllEvents={true}
         date={selectedDate}
         onNavigate={date => setSelectedDate(date)}

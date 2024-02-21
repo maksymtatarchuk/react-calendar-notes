@@ -1,4 +1,7 @@
-const Event = (props: { event: { id: string, title: string, colors: string[], tags: string[], isPublicHoliday: boolean } }) => {
+import { ComponentType } from "react"
+import { EventProps } from "react-big-calendar"
+
+const Event: ComponentType<EventProps<object>> = (props: any) => {
 
     return (
         <div id={props.event.id} className={'custom-event-wrapper ' + (props.event.isPublicHoliday ? ' public-holiday' : '')} key={props.event.id}>
