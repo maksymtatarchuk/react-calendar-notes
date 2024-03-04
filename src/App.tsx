@@ -19,7 +19,7 @@ import ExportEventModel from './models/ExportEventModel';
 const locales = {
   'en-US': enUS
 };
-const NEW_EVENT = new EventModel({ id: 'ID', title: '', start: new Date(), end: new Date(), tags: [], colors: [], isDraggable: true });
+const NEW_EVENT = new EventModel(null);
 const COLOR_TAGS = ['red', 'green', 'blue'];
 const countryCode = Intl.DateTimeFormat().resolvedOptions().locale;
 

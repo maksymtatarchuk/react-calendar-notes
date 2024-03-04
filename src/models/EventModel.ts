@@ -13,11 +13,11 @@ interface EventModel {
 class EventModel {
     constructor(data: any) {
         this.id = utils.generateEventID();
-        this.title = data.title;
-        this.start = new Date(data.start);
-        this.end = new Date(data.end)
-        this.tags = data.tags;
-        this.colors = data.colors;
+        this.title = data && data.title || '';
+        this.start = data && data.start ? new Date(data.start) : new Date();
+        this.end = data && data.end ? new Date(data.end) : new Date();
+        this.tags = data && data.tags || [];
+        this.colors = data && data.colors || [];
         this.isDraggable = true;
     }
 }
